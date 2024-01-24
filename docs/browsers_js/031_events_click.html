@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div id="event_click">
+        event_click
+    </div>
+    <!-- event_click 발생 시 내용 채움. -->
+    <div id="other_tag"></div>
+</body>
+<script>
+    // div에 click event 
+    event_click = document.querySelector('#event_click');
+    event_click.addEventListener('click', (event) => {
+        console.log("event_click !");
+        // event 발생 시 특정 tag 입력 역할
+        let other_tag = document.querySelector("#other_tag");
+        messages = `<h3>event 발생 시 특정 tag 입력</h3>`;
+        other_tag.innerHTML = messages;
+    });
+</script>
+</html>

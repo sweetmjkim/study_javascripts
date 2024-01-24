@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-5">
+            <label for="carcompanyname">Choose Car Company : </label>
+            <select class="form-select" name="car_company_name" id="carcompanyname">
+                <option value="CAR_01">볼보</option>
+                <option value="CAR_02" selected>현대</option>
+                <option value="CAR_03">Audi</option>
+                <option value="CAR_04">포르쉐</option>
+            </select>
+        </div>
+    </div>
+</body>
+<script>
+    // change event 
+    selectElement = document.querySelector('#carcompanyname');
+    selectElement.addEventListener('change', (event) => {
+        // 이벤트가 발생한 요소를 가져옵니다.
+        let target = event.target;
+
+        // 이벤트가 발생한 요소의 value 값을 가져옵니다.
+        let value = target.value;
+        
+        // 이벤트가 발생한 요소의 정보와 value 값을 콘솔에 출력합니다.
+        console.log('선택된 요소:', target);
+        console.log('선택된 값:', value);
+    });
+</script>
+</html>

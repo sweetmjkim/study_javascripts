@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div>
+        event_keydown : 
+        <input type="text" id="event_keydown">
+    </div>
+</body>
+<script>
+    // event keydown 
+    // event 대상 tag 선택 with id
+    event_keydown = document.querySelector("#event_keydown");
+    // event 기다리게 추가
+    event_keydown.addEventListener('keydown', (event) => {
+        //console.log(`now key down code : ${event.code}`);
+        let target = event.target;
+
+        // 이벤트가 발생한 요소의 value 값을 가져옵니다.
+        let value = target.value;
+        
+        // 이벤트가 발생한 요소의 정보와 value 값을 콘솔에 출력합니다.
+        console.log('선택된 요소:', target);
+        console.log('선택된 값:', value);
+
+        if (event.code == 'Enter'){     // keydown 시 넘어온 event에서 코드 확인
+            console.log(`key down : ${event.code}`);
+        }
+    });
+</script>
+</html>
